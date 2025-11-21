@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:getx_clean_architecture/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:getx_clean_architecture/common/colors.dart';
+import 'package:getx_clean_architecture/common/translations/AppLanguageUpdate.dart';
 
 class DashboardView extends GetView<DashboardController> {
   const DashboardView({super.key});
@@ -12,7 +13,7 @@ class DashboardView extends GetView<DashboardController> {
     return Scaffold(
       backgroundColor: AppColors.white.color,
       appBar: AppBar(
-        title: const Text('Dashboard'),
+        title: Text(AppLanguageUpdate.dashboard.tr),
         systemOverlayStyle: const SystemUiOverlayStyle(
           systemNavigationBarIconBrightness: Brightness.dark,
         ),

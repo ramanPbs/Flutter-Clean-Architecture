@@ -20,9 +20,7 @@ class AppPages {
       // ]
     ),
     GetPage(
-        name: Routes.LOGIN,
-        page: () => const LoginView(),
-        binding: AuthBinding()),
+        name: Routes.LOGIN, page: () => LoginView(), binding: AuthBinding()),
     GetPage(
       name: Routes.REGISTER,
       page: () => RegisterView(),

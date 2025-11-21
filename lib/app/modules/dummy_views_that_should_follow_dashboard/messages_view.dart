@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:getx_clean_architecture/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:getx_clean_architecture/common/colors.dart';
+import 'package:getx_clean_architecture/common/translations/AppLanguageUpdate.dart';
 
 /// Replace dashboard controller with the original controller accordingly
 class MessagesView extends GetView<DashboardController> {
@@ -13,7 +14,7 @@ class MessagesView extends GetView<DashboardController> {
     return Scaffold(
       backgroundColor: AppColors.white.color,
       appBar: AppBar(
-        title: const Text('Messages'),
+        title: Text(AppLanguageUpdate.message.tr),
         systemOverlayStyle: const SystemUiOverlayStyle(
           systemNavigationBarIconBrightness: Brightness.dark,
         ),

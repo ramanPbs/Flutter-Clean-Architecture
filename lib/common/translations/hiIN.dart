@@ -1,0 +1,38 @@
+import 'AppLanguageUpdate.dart';
+
+final Map<String, String> hiIN = {
+  'hello': 'नमस्ते',
+  AppLanguageUpdate.welcome: 'हमारे ऐप में आपका स्वागत है',
+  AppLanguageUpdate.welcome: 'हमारे ऐप में आपका स्वागत है',
+  AppLanguageUpdate.change_language: 'भाषा बदलें',
+  AppLanguageUpdate.email: 'ईमेल',
+  AppLanguageUpdate.password: 'पासवर्ड',
+  AppLanguageUpdate.forgot_password: 'पासवर्ड भूल गए',
+  AppLanguageUpdate.logIn: 'लॉग इन करें',
+  AppLanguageUpdate.don_not_have_account: 'क्या आपके पास खाता नहीं है?',
+  AppLanguageUpdate.sign_up: 'साइन अप करें',
+  AppLanguageUpdate.sign_in: 'दाखिल करनां',
+  AppLanguageUpdate.login_to_your_account: 'अपने अकाउंट में लॉग इन करें!',
+  AppLanguageUpdate.username: 'उपयोगकर्ता नाम',
+  AppLanguageUpdate.confirm_password: 'पासवर्ड की पुष्टि कीजिये',
+  AppLanguageUpdate.accept: 'स्वीकार करना',
+  AppLanguageUpdate.term_condition: 'अवधि और हालत',
+  AppLanguageUpdate.and: 'और',
+  AppLanguageUpdate.privacy_policy: 'गोपनीयता नीति',
+  AppLanguageUpdate.dashboard: 'डैशबोर्ड',
+  AppLanguageUpdate.home: 'घर',
+  AppLanguageUpdate.market: 'बाज़ार',
+  AppLanguageUpdate.message: 'संदेशों',
+  AppLanguageUpdate.profile: 'प्रोफ़ाइल',
+  AppLanguageUpdate.already_have_an_account:
+      'क्या आपके पास पहले से एक खाता मौजूद है?',
+  AppLanguageUpdate.please_enter_username: 'कृपया अपना उपयोक्तानाम दर्ज करें',
+  AppLanguageUpdate.please_enter_email: 'कृपया ईमेल दर्ज करेंं',
+  AppLanguageUpdate.please_enter_password: 'अपना पासवर्ड दर्ज करेंं',
+  AppLanguageUpdate.password_did_not_match: 'पासवर्ड मेल नहीं खाया',
+  AppLanguageUpdate.enter_valid_email: 'वैध ईमेल दर्ज करें',
+  AppLanguageUpdate.lets_start_your_journay: 'चलिए अपनी यात्रा शुरू करते हैं',
+  AppLanguageUpdate.create_your_account: 'अपना खाता बनाएं',
+  AppLanguageUpdate.minimum_digit_length:
+      'आपको कम से कम 3 अक्षर दर्ज करने होंगे',
+};

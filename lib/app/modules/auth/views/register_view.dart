@@ -8,6 +8,7 @@ import 'package:getx_clean_architecture/app/global_widgets/loading_indicator.dar
 import 'package:getx_clean_architecture/app/modules/auth/controllers/register_controller.dart';
 import 'package:getx_clean_architecture/app/routes/app_routes.dart';
 import 'package:getx_clean_architecture/app/services/image_picker.dart';
+import 'package:getx_clean_architecture/common/translations/AppLanguageUpdate.dart';
 
 import '../../../../common/colors.dart';
 import '../../../global_widgets/text_field_widget.dart';
@@ -64,35 +65,35 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                             bottom: 20,
                             right: 20,
                             child: GestureDetector(
-                              onTap: () => showImagePicker(
-                                controller.pickedImage,
-                                controller.pickedImagePath,
-                              ),
-                              child: Icon(
-                                Icons.camera_alt,
-                                color: Colors.black,
-                              )
-                              // Container(
-                              //   height: 35,
-                              //   width: 35,
-                              //   decoration: BoxDecoration(
-                              //     color: Get.theme.primaryColor,
-                              //     border: Border.all(
-                              //       width: 1,
-                              //       color: Colors.white,
-                              //     ),
-                              //     borderRadius: const BorderRadius.all(
-                              //       Radius.circular(10),
-                              //     ),
-                              //   ),
-                              //   child: const Center(
-                              //     child: Icon(
-                              //       Icons.camera_alt,
-                              //       color: Colors.white,
-                              //     ),
-                              //   ),
-                              // ),
-                            ),
+                                onTap: () => showImagePicker(
+                                      controller.pickedImage,
+                                      controller.pickedImagePath,
+                                    ),
+                                child: Icon(
+                                  Icons.camera_alt,
+                                  color: Colors.black,
+                                )
+                                // Container(
+                                //   height: 35,
+                                //   width: 35,
+                                //   decoration: BoxDecoration(
+                                //     color: Get.theme.primaryColor,
+                                //     border: Border.all(
+                                //       width: 1,
+                                //       color: Colors.white,
+                                //     ),
+                                //     borderRadius: const BorderRadius.all(
+                                //       Radius.circular(10),
+                                //     ),
+                                //   ),
+                                //   child: const Center(
+                                //     child: Icon(
+                                //       Icons.camera_alt,
+                                //       color: Colors.white,
+                                //     ),
+                                //   ),
+                                // ),
+                                ),
                           )
                         ],
                       ),
@@ -103,11 +104,11 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                         children: [
                           15.height,
                           TextFieldWidget(
-                              labelText: "Username",
+                              labelText: AppLanguageUpdate.username.tr,
                               hintText: "username",
                               onSaved: (input) => currentUser.userName = input!,
                               validator: (input) => input!.isEmpty
-                                  ? "Please enter your username"
+                                  ? AppLanguageUpdate.please_enter_username.tr
                                   : input.length < 3
                                       ? "You must enter 3 characters least"
                                       : null,
@@ -116,14 +117,14 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                 color: Get.theme.primaryColor,
                               )),
                           TextFieldWidget(
-                            labelText: "Email",
+                            labelText: AppLanguageUpdate.email.tr,
                             hintText: "abc@xyz.com",
                             onSaved: (input) => currentUser.email = input,
                             validator: (input) => input!.isEmpty
-                                ? "Please enter your email"
+                                ? AppLanguageUpdate.please_enter_email.tr
                                 : GetUtils.isEmail(input.trim())
                                     ? null
-                                    : "Enter valid email",
+                                    : AppLanguageUpdate.enter_valid_email.tr,
                             onChanged: (String value) {},
                             keyboardType: TextInputType.emailAddress,
                             iconData: Icon(
@@ -132,15 +133,16 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                             ),
                           ),
                           TextFieldWidget(
-                              labelText: "Password",
+                              labelText: AppLanguageUpdate.password.tr,
                               hintText: "Password",
                               onSaved: (input) => currentUser.password = input!,
                               onChanged: (input) =>
                                   currentUser.password = input,
                               validator: (input) => input!.isEmpty
-                                  ? "Please enter your password"
+                                  ? AppLanguageUpdate.please_enter_password.tr
                                   : input.length < 3
-                                      ? "You must enter 3 characters least"
+                                      ? AppLanguageUpdate
+                                          .minimum_digit_length.tr
                                       : null,
                               obscureText: controller.hidePassword.value,
                               keyboardType: TextInputType.visiblePassword,
@@ -158,10 +160,10 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                 color: Get.theme.primaryColor,
                               )),
                           TextFieldWidget(
-                            labelText: "Confirm password",
+                            labelText: AppLanguageUpdate.confirm_password.tr,
                             hintText: "Confirm password",
                             validator: (input) => input != currentUser.password
-                                ? "Password did not match"
+                                ? AppLanguageUpdate.password_did_not_match.tr
                                 : null,
                             obscureText: controller.hideConfirmPassword.value,
                             keyboardType: TextInputType.visiblePassword,
@@ -207,7 +209,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                   child: Row(
                                     children: [
                                       Text(
-                                        "${"Accept"} ",
+                                        "${AppLanguageUpdate.accept.tr} ",
                                         style:
                                             Get.textTheme.bodyMedium!.copyWith(
                                           color: AppColors.medTextColor.color,
@@ -217,7 +219,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                         onTap: () => Get.toNamed(
                                             Routes.TERMS_OF_SERVICES),
                                         child: Text(
-                                          "Terms & Conditions",
+                                          AppLanguageUpdate.term_condition.tr,
                                           style: Get.textTheme.bodyMedium!
                                               .copyWith(
                                             color: Get.theme.primaryColor,
@@ -225,7 +227,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                         ),
                                       ),
                                       Text(
-                                        " ${"and"} ",
+                                        " ${AppLanguageUpdate.and.tr} ",
                                         style:
                                             Get.textTheme.bodyMedium!.copyWith(
                                           color: AppColors.medTextColor.color,
@@ -235,7 +237,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                         onTap: () =>
                                             Get.toNamed(Routes.PRIVACY_POLICY),
                                         child: Text(
-                                          "Privacy Policy",
+                                          AppLanguageUpdate.privacy_policy.tr,
                                           style: Get.textTheme.bodyMedium!
                                               .copyWith(
                                             color: Get.theme.primaryColor,
@@ -251,16 +253,16 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                           BlockButtonWidget(
                             onPressed: controller.register,
                             color: Get.theme.primaryColor,
-                            text: Text("Sign up",
+                            text: Text(AppLanguageUpdate.sign_up.tr,
                                 style: Get.textTheme.headlineMedium!.copyWith(
                                     color: Colors.white, fontSize: 16)),
-                            width: double.infinity,
+                            width: 150,
                             verticalPadding: 14,
                           ).marginOnly(top: 36),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Already have an account?",
+                              Text(AppLanguageUpdate.already_have_an_account.tr,
                                   style: Get.textTheme.bodyMedium),
                               TextButton(
                                 style: TextButton.styleFrom(
@@ -268,7 +270,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                 ),
                                 onPressed: () => Get.offAllNamed(Routes.LOGIN),
                                 child: Text(
-                                  "Sign in",
+                                  AppLanguageUpdate.sign_in.tr,
                                   style: Get.textTheme.headlineMedium!
                                       .copyWith(fontSize: 16),
                                 ),
@@ -307,10 +309,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Column(
         children: [
           Text(
-            "Let's start your journey",
+            AppLanguageUpdate.lets_start_your_journay.tr,
             style: Get.textTheme.headlineMedium,
           ).marginOnly(bottom: 8, top: 16),
-          Text("Create your account", style: Get.textTheme.bodyMedium),
+          Text(AppLanguageUpdate.create_your_account.tr,
+              style: Get.textTheme.bodyMedium),
           // const SizedBox(height: 16,)
         ],
       )),

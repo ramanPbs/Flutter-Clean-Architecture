@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_clean_architecture/common/translations/AppLanguageUpdate.dart';
 
 import '../../../../common/helper.dart';
 import '../../../global_widgets/custom_bottom_nav_bar.dart';
@@ -32,25 +33,25 @@ class RootView extends GetView<RootController> {
             CustomBottomNavigationItem(
               iconUrl: Icons.home_outlined,
               selectedIconUrl: Icons.home,
-              label: "Home",
+              label: AppLanguageUpdate.home.tr,
               color: Get.theme.primaryColor,
             ),
             CustomBottomNavigationItem(
               iconUrl: Icons.shop_outlined,
               selectedIconUrl: Icons.shop,
-              label: "Market",
+              label: AppLanguageUpdate.market.tr,
               color: Get.theme.primaryColor,
             ),
             CustomBottomNavigationItem(
               iconUrl: Icons.message_outlined,
               selectedIconUrl: Icons.message,
-              label: "Messages",
+              label: AppLanguageUpdate.message.tr,
               color: Get.theme.primaryColor,
             ),
             CustomBottomNavigationItem(
               iconUrl: Icons.person_outline,
               selectedIconUrl: Icons.person,
-              label: "Profile",
+              label: AppLanguageUpdate.profile.tr,
               color: Get.theme.primaryColor,
             ),
           ],

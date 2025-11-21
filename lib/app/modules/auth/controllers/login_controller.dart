@@ -10,12 +10,27 @@ import '../services/auth_service.dart';
 
 class LoginController extends GetxController {
   LoginController({required this.authService});
+
   final AuthService authService;
 
   final loading = false.obs;
   final Rx<User> currentUser = Get.find<UserService>().user;
   final hidePassword = true.obs;
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+
+  var isSwitched = false.obs;
+
+  void toggleSwitch(bool value) {
+    isSwitched.value = value;
+    if (value) {
+      var locale = const Locale('hi', 'IN');
+      Get.updateLocale(locale);
+    } else {
+      var locale = const Locale('en', 'US');
+      Get.updateLocale(locale);
+    }
+    update();
+  }
 
   void login() async {
     Get.focusScope?.unfocus();
