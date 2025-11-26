@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 enum AppColors with ColorValues {
@@ -10,12 +9,13 @@ enum AppColors with ColorValues {
   secondary(Color(0xffD9CBAD), "secondary"),
   low(Color(0xffD0D0D0), "low"),
   inActive(Color(0xFF9DB2CE), "inActive"),
-  cta(Color(0xFF4169E1), "cta"),
+  cta(Color(0XFFF5C27D), "cta"),
   lightActive(Color(0xFF5A5A5A), "lightActive"),
   secondaryTextColor(Color(0xFF363535), "secondaryTextColor"),
   bgColor(Color(0xFFF2F2F4), "bgColor"),
   fieldTextColor(Color(0xFF565656), "fieldTextColor"),
-  primaryColor(Colors.blue, "primaryColor");
+  buttonColor(Color(0xFFF5C27D), "buttonColor"),
+  primaryColor(Color(0XFFF5C27D), "primaryColor");
 
   final Color color;
   final String name;

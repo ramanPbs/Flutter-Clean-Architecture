@@ -31,21 +31,21 @@ class RootView extends GetView<RootController> {
           // onChange: controller.changePage,
           children: [
             CustomBottomNavigationItem(
-              iconUrl: Icons.home_outlined,
+              iconUrl: Icons.dashboard,
               selectedIconUrl: Icons.home,
-              label: AppLanguageUpdate.home.tr,
+              label: AppLanguageUpdate.dashboard.tr,
               color: Get.theme.primaryColor,
             ),
             CustomBottomNavigationItem(
-              iconUrl: Icons.shop_outlined,
+              iconUrl: Icons.mark_email_read,
               selectedIconUrl: Icons.shop,
-              label: AppLanguageUpdate.market.tr,
+              label: AppLanguageUpdate.reservations.tr,
               color: Get.theme.primaryColor,
             ),
             CustomBottomNavigationItem(
               iconUrl: Icons.message_outlined,
               selectedIconUrl: Icons.message,
-              label: AppLanguageUpdate.message.tr,
+              label: AppLanguageUpdate.favourite.tr,
               color: Get.theme.primaryColor,
             ),
             CustomBottomNavigationItem(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:getx_clean_architecture/common/colors.dart';
 
 ThemeData getAppTheme() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    primaryColor: Colors.blue,
+    primaryColor: AppColors.buttonColor.color,
     textSelectionTheme: TextSelectionThemeData(
       cursorColor: const Color(0xff614A5E),
       selectionHandleColor: const Color(0xff614A5E),
@@ -15,10 +16,10 @@ ThemeData getAppTheme() {
       ),
     ),
     fontFamily: 'Varela',
-    textTheme: const TextTheme(
+    textTheme: TextTheme(
       headlineMedium: TextStyle(
         fontWeight: FontWeight.w800,
-        color: Colors.blue,
+        color: AppColors.buttonColor.color,
         fontSize: 20,
       ),
       headlineSmall: TextStyle(
@@ -28,12 +29,12 @@ ThemeData getAppTheme() {
       ),
       titleLarge: TextStyle(
         fontWeight: FontWeight.w600,
-        color: Color(0xff2C2B2B),
+        color: AppColors.buttonColor.color,
         fontSize: 24,
       ),
       titleMedium: TextStyle(
         fontWeight: FontWeight.w600,
-        color: Color(0xff363535),
+        color: AppColors.buttonColor.color,
         fontSize: 14,
       ),
       bodyLarge: TextStyle(

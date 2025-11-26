@@ -19,11 +19,9 @@ final Map<String, String> hiIN = {
   AppLanguageUpdate.term_condition: 'अवधि और हालत',
   AppLanguageUpdate.and: 'और',
   AppLanguageUpdate.privacy_policy: 'गोपनीयता नीति',
-  AppLanguageUpdate.dashboard: 'डैशबोर्ड',
   AppLanguageUpdate.home: 'घर',
   AppLanguageUpdate.market: 'बाज़ार',
   AppLanguageUpdate.message: 'संदेशों',
-  AppLanguageUpdate.profile: 'प्रोफ़ाइल',
   AppLanguageUpdate.already_have_an_account:
       'क्या आपके पास पहले से एक खाता मौजूद है?',
   AppLanguageUpdate.please_enter_username: 'कृपया अपना उपयोक्तानाम दर्ज करें',
@@ -33,6 +31,14 @@ final Map<String, String> hiIN = {
   AppLanguageUpdate.enter_valid_email: 'वैध ईमेल दर्ज करें',
   AppLanguageUpdate.lets_start_your_journay: 'चलिए अपनी यात्रा शुरू करते हैं',
   AppLanguageUpdate.create_your_account: 'अपना खाता बनाएं',
+  AppLanguageUpdate.alert: 'चेतावनी',
+  AppLanguageUpdate.tab_again_to_leave: 'छोड़ने के लिए पुनः टैप करें!',
+  AppLanguageUpdate.please_accept_term_condition:
+      'कृपया नियम एवं शर्तें स्वीकार करें।',
   AppLanguageUpdate.minimum_digit_length:
       'आपको कम से कम 3 अक्षर दर्ज करने होंगे',
+  AppLanguageUpdate.dashboard: 'डैशबोर्ड',
+  AppLanguageUpdate.reservations: 'आरक्षण',
+  AppLanguageUpdate.favourite: 'पसंदीदा',
+  AppLanguageUpdate.profile: 'प्रोफ़ाइल',
 };

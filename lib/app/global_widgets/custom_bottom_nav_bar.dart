@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_clean_architecture/app/modules/root/widgets/custom_bottom_navigation_item.dart';
+import 'package:getx_clean_architecture/common/colors.dart';
 import '../modules/root/controllers/root_controller.dart';
 
 class CustomBottomNavigationBar extends GetView<RootController> {
@@ -10,7 +11,7 @@ class CustomBottomNavigationBar extends GetView<RootController> {
 
   const CustomBottomNavigationBar({
     super.key,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = Colors.red,
     required this.itemColor,
     required this.children,
   });
@@ -63,7 +64,8 @@ class CustomBottomNavigationBar extends GetView<RootController> {
             height: isSelected ? 2 : 0,
             margin: const EdgeInsets.only(bottom: 13.5),
             width: 73,
-            color: isSelected ? Get.theme.primaryColor : Colors.transparent,
+            color:
+                isSelected ? AppColors.buttonColor.color : Colors.transparent,
           ),
           Column(
             children: [
@@ -77,7 +79,7 @@ class CustomBottomNavigationBar extends GetView<RootController> {
                         : item.iconUrl.toString(),
                   ),
                   size: 24,
-                  color: isSelected ? Get.theme.primaryColor : Colors.grey,
+                  color: isSelected ? AppColors.buttonColor.color : Colors.grey,
                 ),
               ).paddingOnly(top: isSelected ? 0 : 10),
               const SizedBox(height: 6),
@@ -85,7 +87,7 @@ class CustomBottomNavigationBar extends GetView<RootController> {
                 AnimatedTextLabel(
                   item.label,
                   textStyle: Get.textTheme.bodyMedium!.copyWith(
-                    color: Get.theme.primaryColor,
+                    color: AppColors.buttonColor.color,
                     fontFamily: 'SF-Pro-Text',
                   ),
                 ),

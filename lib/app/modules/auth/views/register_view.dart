@@ -110,11 +110,12 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                               validator: (input) => input!.isEmpty
                                   ? AppLanguageUpdate.please_enter_username.tr
                                   : input.length < 3
-                                      ? "You must enter 3 characters least"
+                                      ? ""
+                                          ""
                                       : null,
                               iconData: Icon(
                                 Icons.person_2,
-                                color: Get.theme.primaryColor,
+                                color: AppColors.buttonColor.color,
                               )),
                           TextFieldWidget(
                             labelText: AppLanguageUpdate.email.tr,
@@ -129,7 +130,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                             keyboardType: TextInputType.emailAddress,
                             iconData: Icon(
                               Icons.email,
-                              color: Get.theme.primaryColor,
+                              color: AppColors.buttonColor.color,
                             ),
                           ),
                           TextFieldWidget(
@@ -157,7 +158,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                               ),
                               iconData: Icon(
                                 Icons.lock,
-                                color: Get.theme.primaryColor,
+                                color: AppColors.buttonColor.color,
                               )),
                           TextFieldWidget(
                             labelText: AppLanguageUpdate.confirm_password.tr,
@@ -179,7 +180,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                             ),
                             iconData: Icon(
                               Icons.lock,
-                              color: Get.theme.primaryColor,
+                              color: AppColors.buttonColor.color,
                             ),
                           ),
                           Padding(
@@ -190,10 +191,11 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                               children: [
                                 Checkbox(
                                   side: BorderSide(
-                                      width: 2, color: Get.theme.primaryColor),
+                                      width: 2,
+                                      color: AppColors.buttonColor.color),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(3)),
-                                  activeColor: Get.theme.primaryColor,
+                                  activeColor: AppColors.buttonColor.color,
                                   value: controller
                                       .isTermsAndConditionsAccepted.value,
                                   onChanged: (val) {
@@ -222,7 +224,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                           AppLanguageUpdate.term_condition.tr,
                                           style: Get.textTheme.bodyMedium!
                                               .copyWith(
-                                            color: Get.theme.primaryColor,
+                                            color: AppColors.buttonColor.color,
                                           ),
                                         ),
                                       ),
@@ -240,7 +242,7 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                                           AppLanguageUpdate.privacy_policy.tr,
                                           style: Get.textTheme.bodyMedium!
                                               .copyWith(
-                                            color: Get.theme.primaryColor,
+                                            color: AppColors.buttonColor.color,
                                           ),
                                         ),
                                       ),
@@ -252,13 +254,13 @@ class RegisterView extends GetView<RegisterController> with MyImagePicker {
                           ),
                           BlockButtonWidget(
                             onPressed: controller.register,
-                            color: Get.theme.primaryColor,
+                            color: AppColors.buttonColor.color,
                             text: Text(AppLanguageUpdate.sign_up.tr,
                                 style: Get.textTheme.headlineMedium!.copyWith(
                                     color: Colors.white, fontSize: 16)),
-                            width: 150,
+                            width: MediaQuery.sizeOf(context).width,
                             verticalPadding: 14,
-                          ).marginOnly(top: 36),
+                          ).marginOnly(top: 36, left: 20, right: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

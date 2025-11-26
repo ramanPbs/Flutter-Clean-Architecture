@@ -13,13 +13,13 @@ class MarketView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white.color,
-      appBar: AppBar(
-        title: Text(AppLanguageUpdate.market.tr),
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          systemNavigationBarIconBrightness: Brightness.dark,
-        ),
-        backgroundColor: Get.theme.primaryColor.withOpacity(0.075),
-      ),
+      // appBar: AppBar(
+      //   title: Text(AppLanguageUpdate.market.tr),
+      //   systemOverlayStyle: const SystemUiOverlayStyle(
+      //     systemNavigationBarIconBrightness: Brightness.dark,
+      //   ),
+      //   backgroundColor: Get.theme.primaryColor.withOpacity(0.075),
+      // ),
       body: Obx(() => controller.loading.value
           ? const CircularProgressIndicator()
           : ListView.builder(

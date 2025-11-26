@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:getx_clean_architecture/common/translations/AppLanguageUpdate.dart';
 import 'package:intl/intl.dart';
 
 class Helper {
@@ -12,7 +13,8 @@ class Helper {
     if (currentBackPressTime == null ||
         now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
       currentBackPressTime = now;
-      Get.snackbar("Alert", "Tap again to leave!",
+      Get.snackbar(
+          AppLanguageUpdate.alert.tr, AppLanguageUpdate.tab_again_to_leave.tr,
           snackPosition: SnackPosition.BOTTOM,
           margin: const EdgeInsets.all(16),
           colorText: Get.theme.primaryColor);

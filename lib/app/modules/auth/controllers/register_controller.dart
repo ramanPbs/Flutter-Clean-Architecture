@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_clean_architecture/common/translations/AppLanguageUpdate.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../models/user_model.dart';
 import '../../../routes/app_routes.dart';
@@ -27,8 +28,8 @@ class RegisterController extends GetxController {
     registerFormKey.currentState!.save();
     if (!isTermsAndConditionsAccepted.value) {
       Get.snackbar(
-        "Alert",
-        "Please accept terms and conditions.",
+        AppLanguageUpdate.alert.tr,
+        AppLanguageUpdate.please_accept_term_condition.tr,
         margin: const EdgeInsets.all(16),
         colorText: Get.theme.primaryColor,
       );
@@ -37,7 +38,9 @@ class RegisterController extends GetxController {
     loading.value = true;
     try {
       // await authService.performAuth(currentUser.value);
-      Get.toNamed(Routes.ROOT);
+      // Get.toNamed(Routes.ROOT);
+
+      Navigator.pushNamed(Get.context!, Routes.ROOT);
     } on DioException {
       // Get.showSnackbar(Ui.ErrorSnackBar(message: e.message!.toString()));
     } finally {

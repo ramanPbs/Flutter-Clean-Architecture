@@ -14,8 +14,10 @@ class Routes {
   static const EMPLOYEE_REGISTER = '/employee_register';
 
   static const ROOT = '/root';
+  static const DASHBOARD = '/dashboard';
 
   static const PROFILE = '/profile';
+  static const SETTINGS = '/settings';
 
   static const SUB_CATEGORY_DETAIL = '/sub_category_detail';
   static const NEW_DISCUSSION = '/new_discussion';

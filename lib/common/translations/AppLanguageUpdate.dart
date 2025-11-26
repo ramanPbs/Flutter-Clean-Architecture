@@ -18,11 +18,11 @@ class AppLanguageUpdate {
   static String and = 'and';
   static String privacy_policy = 'privacy_policy';
   static String already_have_an_account = 'already_have_an_account?';
-  static String dashboard = 'dashboard';
+
   static String home = 'home';
   static String market = 'market';
   static String message = 'message';
-  static String profile = 'profile';
+
   static String please_enter_username = 'please_enter_user_name';
   static String please_enter_email = 'please_enter_your_email';
   static String please_enter_password = 'please_enter_your_password';
@@ -31,4 +31,13 @@ class AppLanguageUpdate {
   static String minimum_digit_length = 'minimum_digit_length';
   static String lets_start_your_journay = 'lets_start_your_journay';
   static String create_your_account = 'create_your_account';
+  static String language = 'language';
+  static String alert = 'alert';
+  static String tab_again_to_leave = 'tab_again_to_leave';
+  static String please_accept_term_condition = 'please_accept_term_condition';
+  static String dashboard = 'dashboard';
+  static String reservations = 'reservations';
+  static String favourite = 'favourite';
+  static String profile = 'profile';
+  static String theme = 'theme';
 }

@@ -28,7 +28,7 @@ class LoginView extends GetView<LoginController> {
                   // ).marginOnly(bottom: 20, top: 16),
                   Image.network(
                     "https://possibilitysolutions.com/img/possibility_logo.png",
-                  ).marginSymmetric(horizontal: 30, vertical: 20),
+                  ).marginSymmetric(horizontal: 70, vertical: 50),
                   Expanded(
                     child: ListView(
                       children: [
@@ -67,7 +67,7 @@ class LoginView extends GetView<LoginController> {
                                 keyboardType: TextInputType.emailAddress,
                                 iconData: Icon(
                                   Icons.email,
-                                  color: AppColors.primaryColor.color,
+                                  color: AppColors.buttonColor.color,
                                 ),
                               ).marginOnly(bottom: 4),
                               Obx(
@@ -98,7 +98,7 @@ class LoginView extends GetView<LoginController> {
                                   ),
                                   iconData: Icon(
                                     Icons.lock,
-                                    color: AppColors.primaryColor.color,
+                                    color: AppColors.buttonColor.color,
                                   ),
                                 ),
                               ),
@@ -117,14 +117,14 @@ class LoginView extends GetView<LoginController> {
                               ).paddingSymmetric(horizontal: 24),
                               BlockButtonWidget(
                                 onPressed: controller.login,
-                                color: Get.theme.primaryColor,
+                                color: AppColors.buttonColor.color,
                                 text: Text(AppLanguageUpdate.logIn.tr,
                                     style: Get.textTheme.headlineMedium!
                                         .copyWith(
                                             color: Colors.white, fontSize: 16)),
-                                width: 150,
+                                width: MediaQuery.sizeOf(context).width,
                                 verticalPadding: 14,
-                              ).marginOnly(top: 48),
+                              ).marginOnly(top: 48, left: 20, right: 20),
                               SizedBox(height: 20),
                               Padding(
                                 padding: const EdgeInsets.symmetric(
@@ -140,15 +140,137 @@ class LoginView extends GetView<LoginController> {
                                           fontSize: 16),
                                     ),
                                     Spacer(),
-                                    Switch(
-                                      value: controller.isSwitched.value,
-                                      onChanged: (value) {
-                                        controller.toggleSwitch(value);
+                                    GestureDetector(
+                                      onTap: () {
+                                        showModalBottomSheet(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            // Your bottom sheet content goes here
+                                            return Container(
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height /
+                                                        3,
+                                                // Example fixed height
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      vertical: 24.0,
+                                                      horizontal: 16),
+                                                  child: Center(
+                                                      child: Column(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .symmetric(
+                                                                vertical: 12.0),
+                                                        child: Text('Language'),
+                                                      ),
+                                                      Divider(height: 1),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .symmetric(
+                                                                vertical: 12.0),
+                                                        child: GestureDetector(
+                                                          onTap: () {
+                                                            controller
+                                                                .ChangeLanguage(
+                                                                    "English");
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: Text(
+                                                            'English',
+                                                            style: TextStyle(
+                                                                color: controller
+                                                                            .getXLocalStorage
+                                                                            .userLanguage ==
+                                                                        "English"
+                                                                    ? AppColors
+                                                                        .buttonColor
+                                                                        .color
+                                                                    : AppColors
+                                                                        .darkText
+                                                                        .color),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Divider(height: 1),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .symmetric(
+                                                                vertical: 12.0),
+                                                        child: GestureDetector(
+                                                          onTap: () {
+                                                            controller
+                                                                .ChangeLanguage(
+                                                                    "Hindi");
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: Text(
+                                                            'Hindi',
+                                                            style: TextStyle(
+                                                                color: controller
+                                                                            .getXLocalStorage
+                                                                            .userLanguage ==
+                                                                        "Hindi"
+                                                                    ? AppColors
+                                                                        .buttonColor
+                                                                        .color
+                                                                    : AppColors
+                                                                        .darkText
+                                                                        .color),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Divider(height: 1),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .symmetric(
+                                                                vertical: 12.0),
+                                                        child: GestureDetector(
+                                                          onTap: () {
+                                                            controller
+                                                                .ChangeLanguage(
+                                                                    "Spanish");
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: Text(
+                                                            'Spanish',
+                                                            style: TextStyle(
+                                                                color: controller
+                                                                            .getXLocalStorage
+                                                                            .userLanguage ==
+                                                                        "Spanish"
+                                                                    ? AppColors
+                                                                        .buttonColor
+                                                                        .color
+                                                                    : AppColors
+                                                                        .darkText
+                                                                        .color),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )),
+                                                ));
+                                          },
+                                        );
                                       },
+                                      child: Icon(
+                                        Icons.keyboard_arrow_down,
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ],
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         )
@@ -181,7 +303,9 @@ class LoginView extends GetView<LoginController> {
                 onPressed: () => Get.offAllNamed(Routes.REGISTER),
                 child: Text(
                   AppLanguageUpdate.sign_up.tr,
-                  style: Get.textTheme.headlineMedium!.copyWith(fontSize: 16),
+                  style: Get.textTheme.headlineMedium!.copyWith(
+                    fontSize: 16,
+                  ),
                 ),
               )
             ],

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:getx_clean_architecture/app/modules/dashboard/views/SettingsView/SeetingsView.dart';
 import 'package:getx_clean_architecture/app/modules/root/views/root_view.dart';
 
 import '../modules/auth/bindings/auth_binding.dart';
@@ -15,10 +16,8 @@ class AppPages {
       name: Routes.ROOT,
       page: () => const RootView(),
       binding: RootBinding(),
-      // middlewares: const [
-      //   // AuthMiddleware(),
-      // ]
     ),
+    GetPage(name: Routes.SETTINGS, page: () => SettingsScreen()),
     GetPage(
         name: Routes.LOGIN, page: () => LoginView(), binding: AuthBinding()),
     GetPage(
